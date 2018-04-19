@@ -14,13 +14,14 @@
     margin-left: 0;
     padding-left: 0;
 }
-
+.Button:disabled {
+    color: #ccc;
+    cursor: not-allowed;
+}
 .Success {
     color: #5C9210;
-
 }
 
 .Danger {
     color: #944317;
-
 }

@@ -86,7 +86,7 @@ class ContactData extends Component {
                         {value: 'cheapest', displayValue: 'Cheapest'}
                     ]
                 },
-                value: '',
+                value: 'cheapest',
                 validation: {},
                 valid: true
             }
@@ -95,6 +95,7 @@ class ContactData extends Component {
         loading: false
     }
 
+//send info to server
     orderHandler = ( event ) => {
         event.preventDefault();
         this.setState( { loading: true } );
@@ -117,6 +118,7 @@ class ContactData extends Component {
             } );
     }
 
+//validaton forms
     checkValidity(value, rules) {
         let isValid = true;
         if (!rules) {
@@ -182,11 +184,11 @@ class ContactData extends Component {
                   key={formElement.id}
                   elementType={formElement.config.elementType}
                   elementConfig={formElement.config.elementConfig}
-                        value={formElement.config.value}
-                        invalid={!formElement.config.valid}
-                        shouldValidate={formElement.config.validation}
-                        touched={formElement.config.touched}
-                        changed={(event) => this.inputChangedHandler(event, formElement.id)} />
+                  value={formElement.config.value}
+                  invalid={!formElement.config.valid}
+                  shouldValidate={formElement.config.validation}
+                  touched={formElement.config.touched}
+                  changed={(event) => this.inputChangedHandler(event, formElement.id)} />
                 ))}
                 <Button btnType="Success" disabled={!this.state.formIsValid}>ORDER</Button>
             </form>
